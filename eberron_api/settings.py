@@ -13,10 +13,8 @@ import environ
 import os
 from pathlib import Path
 
-rootDir = environ.Path(__file__) - 2
-
 env = environ.Env()
-environ.Env.read_env(env_file=rootDir('.env'))
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
