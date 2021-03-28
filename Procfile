@@ -1,0 +1,1 @@
+web: gunicorn eberron_api.wsgi
