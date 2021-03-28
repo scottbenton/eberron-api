@@ -13,8 +13,10 @@ import environ
 import os
 from pathlib import Path
 
+rootDir = environ.Path(__file__) - 2
+
 env = environ.Env()
-environ.Env.read_env()
+environ.Env.read_env(env_file=rootDir('.env'))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -116,6 +118,6 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = {
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
-}
+]
